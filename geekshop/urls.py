@@ -16,12 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
-from pruducts.views import index, products
-from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
+
     path('products/',include('pruducts.urls',namespace='products')),
     path('products/', products, name='products'),
 
@@ -29,3 +28,7 @@ urlpatterns = [
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+    path('products/', include('pruducts.urls', namespace='products')),
+]
+

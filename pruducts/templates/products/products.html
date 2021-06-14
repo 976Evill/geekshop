@@ -8,6 +8,7 @@
 {% block content %}
     <div class="container">
 
+
         <div class="row">
 
             <div class="col-lg-3">
@@ -19,6 +20,19 @@
                     {% for category in categories %}
                       <a href="#" class="list-group-item">{{ category.name }}</a>
                       {% endfor %}
+
+
+        <div class="row">
+
+            <div class="col-lg-3">
+
+                <h1 class="my-4">GeekShop</h1>
+                <div class="list-group">
+                    <a href="#" class="list-group-item">Новинки</a>
+                    <a href="#" class="list-group-item">Одежда</a>
+                    <a href="#" class="list-group-item">Обувь</a>
+                    <a href="#" class="list-group-item">Аксессуары</a>
+                    <a href="#" class="list-group-item">Подарки</a>
 
                 </div>
 
@@ -63,8 +77,11 @@
                         <div class="card h-100">
                             <a href="#">
                                 <img class="card-img-top"
+
                                      src="/media/{{ product.image }}"
-                                     alt="">
+
+                                     src="{% static product.image %}"
+                 alt="">
                             </a>
                             <div class="card-body">
                                 <h4 class="card-title">
@@ -110,4 +127,8 @@
             <p class="m-0 text-center text-white">Copyright &copy; GeekShop 2021</p>
         </div>
     </footer>
+
 {% endblock %}
+
+{% endblock %}
+
