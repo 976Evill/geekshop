@@ -1,6 +1,21 @@
 from django.shortcuts import render
 
 
+from pruducts.models import Product,ProductCategory
+def index(request):
+    context = {'title': 'GeekShop'}
+    return render(request, 'products/index.html', context)
+
+
+def products(request):
+    context = {
+        'title': 'GeekShop - Каталог',
+        'products': Product.objects.all(),
+        'categories': ProductCategory.objects.all()
+    }
+    return render(request, 'products/products.html', context)
+
+
 def index(request):
     context = {'title': 'GeekShop'}
     return render(request, 'products/index.html', context)
@@ -62,3 +77,4 @@ def products(request):
         ]
     }
     return render(request, 'products/products.html', context)
+

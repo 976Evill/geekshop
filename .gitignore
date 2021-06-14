@@ -2,6 +2,5 @@
 db.sqlite3
 __pycache__/
 venv
-test-context.html
 
 
